@@ -1,0 +1,47 @@
+{
+  "app": {
+    "name": "CodeMaster",
+    "description": "AI Coding Agent for Chinese Developers"
+  },
+  "common": {
+    "settings": "Settings",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  },
+  "sidebar": {
+    "sessions": "Sessions",
+    "newSession": "New Session",
+    "noSessions": "No sessions yet"
+  },
+  "chat": {
+    "placeholder": "Type your message...",
+    "send": "Send",
+    "thinking": "Thinking...",
+    "toolCall": "Tool Call",
+    "toolResult": "Result"
+  },
+  "settings": {
+    "title": "Settings",
+    "apiKey": "API Key",
+    "apiKeyPlaceholder": "Enter your DeepSeek API Key",
+    "testConnection": "Test Connection",
+    "language": "Language",
+    "workspace": "Workspace Path",
+    "maxSteps": "Max Agent Steps",
+    "timeout": "Command Timeout (seconds)"
+  },
+  "terminal": {
+    "title": "Terminal",
+    "newTab": "New Tab",
+    "closeTab": "Close Tab"
+  },
+  "welcome": {
+    "title": "Welcome",
+    "description": "Please configure your DeepSeek API Key in settings to get started."
+  }
+}

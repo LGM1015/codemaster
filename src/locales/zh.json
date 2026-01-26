@@ -1,0 +1,47 @@
+{
+  "app": {
+    "name": "CodeMaster",
+    "description": "面向中国开发者的 AI 编码助手"
+  },
+  "common": {
+    "settings": "设置",
+    "cancel": "取消",
+    "save": "保存",
+    "delete": "删除",
+    "confirm": "确认",
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功"
+  },
+  "sidebar": {
+    "sessions": "会话",
+    "newSession": "新建会话",
+    "noSessions": "暂无会话"
+  },
+  "chat": {
+    "placeholder": "输入您的消息...",
+    "send": "发送",
+    "thinking": "思考中...",
+    "toolCall": "工具调用",
+    "toolResult": "执行结果"
+  },
+  "settings": {
+    "title": "设置",
+    "apiKey": "API 密钥",
+    "apiKeyPlaceholder": "请输入您的 DeepSeek API Key",
+    "testConnection": "测试连接",
+    "language": "语言",
+    "workspace": "工作区路径",
+    "maxSteps": "代理最大步数",
+    "timeout": "命令超时时间（秒）"
+  },
+  "terminal": {
+    "title": "终端",
+    "newTab": "新建标签",
+    "closeTab": "关闭标签"
+  },
+  "welcome": {
+    "title": "欢迎使用",
+    "description": "请在设置中配置您的 DeepSeek API Key 以开始使用。"
+  }
+}
