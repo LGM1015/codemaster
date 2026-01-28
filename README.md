@@ -73,7 +73,7 @@ CodeMaster 是一个开源的 AI 编码代理桌面应用，专为中国开发�
 
 ### 安装
 
-从 [Releases](https://github.com/xxx/codemaster/releases) 下载最新的 `.msi` 安装包。
+从 [Releases](https://github.com/LGM1015/codemaster/releases) 下载最新的 `.msi` 安装包。
 
 ### 开发
 
