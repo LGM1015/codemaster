@@ -1,6 +1,6 @@
 use tauri::{State, Window, Emitter};
 use crate::commands::settings::AppState;
-use crate::agent::r#loop::{Agent, AgentEvent};
+use crate::agent::r#loop::Agent;
 use crate::api::deepseek::Message;
 use tokio::sync::mpsc;
 
@@ -11,9 +11,10 @@ pub async fn send_message(
     message: String,
     history: Vec<Message>,
 ) -> Result<(), String> {
-    let client_guard = state.client.lock().map_err(|_| "Failed to lock state")?;
-    let client = client_guard.as_ref().ok_or("API Key not set")?.clone();
-    drop(client_guard); // Release lock
+    let client = {
+        let guard = state.client.lock().map_err(|_| "Failed to lock state")?;
+        guard.as_ref().ok_or("API Key not set")?.clone()
+    };
 
     let registry = state.registry.clone();
     let agent = Agent::new(client, registry);
@@ -27,8 +28,7 @@ pub async fn send_message(
 
     // Forward events to frontend
     while let Some(event) = rx.recv().await {
-        // Tauri v2 uses .emit() on Window (renamed from emit_all/emit in v1? v2 uses Emitter trait)
-        // Window implements Emitter.
+        // Tauri v2 uses .emit() on Window
         if let Err(e) = window.emit("agent-event", event) {
             eprintln!("Failed to emit event: {}", e);
         }

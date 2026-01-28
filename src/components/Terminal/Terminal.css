@@ -1,5 +1,38 @@
 .terminal-container {
   width: 100%;
   height: 100%;
-  padding: 4px;
+  padding: 8px;
+  background-color: #0a1929;
+  color: #b2c5d6;
+  font-family: Consolas, 'Courier New', monospace;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 30px rgba(34, 211, 238, 0.05);
+  border-top: 1px solid rgba(34, 211, 238, 0.3);
+}
+
+/* Subtle scanlines effect */
+.terminal-container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.1) 2px,
+    rgba(0, 0, 0, 0.1) 4px
+  );
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+/* Subtle glow on text */
+.terminal-container .xterm-rows {
+  text-shadow: 0 0 1px rgba(34, 211, 238, 0.3);
 }

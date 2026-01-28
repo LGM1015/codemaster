@@ -18,6 +18,18 @@
     "newSession": "New Session",
     "noSessions": "No sessions yet"
   },
+  "session": {
+    "title": "Sessions",
+    "new": "New Session",
+    "empty": "No sessions, click + to start",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "daysAgo": "{{count}} days ago",
+    "rename": "Rename",
+    "delete": "Delete",
+    "deleteConfirm": "Are you sure you want to delete this session?",
+    "defaultTitle": "New Session"
+  },
   "chat": {
     "placeholder": "Type your message...",
     "send": "Send",

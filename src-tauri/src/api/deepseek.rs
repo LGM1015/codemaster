@@ -91,7 +91,22 @@ pub struct StreamChoice {
 pub struct StreamDelta {
     pub role: Option<String>,
     pub content: Option<String>,
-    pub tool_calls: Option<Vec<ToolCall>>,
+    pub tool_calls: Option<Vec<StreamToolCall>>,
+}
+
+// Tool call delta for streaming (has index and optional fields)
+#[derive(Deserialize, Debug)]
+pub struct StreamToolCall {
+    pub index: i32,
+    pub id: Option<String>,
+    pub r#type: Option<String>,
+    pub function: Option<StreamFunctionCall>,
+}
+
+#[derive(Deserialize, Debug)]
+pub struct StreamFunctionCall {
+    pub name: Option<String>,
+    pub arguments: Option<String>,
 }
 
 impl DeepSeekClient {

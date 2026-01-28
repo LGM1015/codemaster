@@ -1,0 +1,12 @@
+{
+  "name": "agent-browser-tools",
+  "version": "1.0.0",
+  "description": "Playwright tools for Agent",
+  "scripts": {
+    "inspect": "node inspect.js",
+    "screenshot": "node screenshot.js"
+  },
+  "dependencies": {
+    "playwright": "^1.42.0"
+  }
+}

@@ -4,9 +4,23 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #1a1a2e;
+  /* Cyberpunk Palette */
+  --cyber-bg-dark: #0a0a0f;
+  --cyber-bg: #12121a;
+  --cyber-bg-light: #1a1a2e;
+  --cyber-neon-pink: #ff00ff;
+  --cyber-neon-cyan: #00ffff;
+  --cyber-neon-magenta: #ff6ec7;
+  --cyber-neon-purple: #8b5cf6;
+  --cyber-glow-pink: 0 0 10px #ff00ff, 0 0 20px #ff00ff40;
+  --cyber-glow-cyan: 0 0 10px #00ffff, 0 0 20px #00ffff40;
+  --cyber-border: 1px solid #ff00ff40;
+  --cyber-text: #e0e0ff;
+  --cyber-text-dim: #8888aa;
+
+  color-scheme: dark;
+  color: var(--cyber-text);
+  background-color: var(--cyber-bg-dark);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,9 +33,52 @@ body {
   display: flex;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--cyber-bg-dark);
+  overflow: hidden;
+}
+
+/* Global Scanline Effect */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 9999;
+  animation: scanline 10s linear infinite;
+  opacity: 0.3;
 }
 
 #root {
   width: 100%;
   height: 100vh;
+}
+
+/* Keyframes */
+@keyframes glitch {
+  0% { transform: translate(0) }
+  20% { transform: translate(-2px, 2px) }
+  40% { transform: translate(-2px, -2px) }
+  60% { transform: translate(2px, 2px) }
+  80% { transform: translate(2px, -2px) }
+  100% { transform: translate(0) }
+}
+
+@keyframes neon-pulse {
+  0%, 100% { opacity: 1; filter: brightness(1); }
+  50% { opacity: 0.8; filter: brightness(1.2); }
+}
+
+@keyframes scanline {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100%; }
 }

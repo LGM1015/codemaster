@@ -1,9 +1,21 @@
 .tool-call {
-  background-color: #222;
-  border: 1px solid #444;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--cyber-neon-purple);
   border-radius: 4px;
   margin: 0.5rem 0;
   overflow: hidden;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.1);
+  position: relative;
+}
+
+/* Angular corner decoration */
+.tool-call::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top: 10px solid var(--cyber-neon-purple);
+  border-left: 10px solid transparent;
 }
 
 .tool-header {
@@ -12,26 +24,35 @@
   padding: 0.5rem;
   cursor: pointer;
   gap: 0.5rem;
-  background-color: #2a2a2a;
+  background-color: rgba(139, 92, 246, 0.1);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.3);
+  transition: background-color 0.2s;
 }
 
 .tool-header:hover {
-  background-color: #333;
+  background-color: rgba(139, 92, 246, 0.2);
 }
 
 .tool-name {
   font-family: monospace;
-  color: #00d9ff;
+  color: var(--cyber-neon-magenta);
   font-weight: bold;
+  text-shadow: 0 0 5px rgba(255, 110, 199, 0.5);
 }
 
 .tool-status {
   margin-left: auto;
+  font-size: 0.8rem;
+  padding: 2px 6px;
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid #555;
 }
 
 .tool-details {
   padding: 0.5rem;
-  border-top: 1px solid #444;
+  border-top: 1px solid rgba(139, 92, 246, 0.2);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .tool-section {
@@ -40,20 +61,49 @@
 
 .tool-label {
   font-size: 0.8rem;
-  color: #888;
+  color: var(--cyber-text-dim);
   margin-bottom: 0.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .tool-code {
-  background-color: #111;
+  background-color: #0a0a0f;
   padding: 0.5rem;
   border-radius: 2px;
   overflow-x: auto;
   margin: 0;
   font-size: 0.9rem;
-  color: #ddd;
+  color: var(--cyber-neon-cyan);
+  border: 1px solid #333;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .tool-code.result {
-  color: #8f8;
+  color: var(--cyber-neon-pink);
+  border-color: rgba(255, 0, 255, 0.3);
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Pending tool animation */
+.tool-call.pending .tool-status {
+  animation: pulse-pending 1.5s infinite;
+}
+
+@keyframes pulse-pending {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Success state */
+.tool-call.success .tool-header {
+  border-left: 3px solid #10b981;
+}
+
+/* Arrow animation */
+.tool-arrow {
+  transition: transform 0.2s;
+  color: var(--cyber-text-dim);
+  font-size: 0.8rem;
 }

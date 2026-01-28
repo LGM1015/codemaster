@@ -18,6 +18,18 @@
     "newSession": "新建会话",
     "noSessions": "暂无会话"
   },
+  "session": {
+    "title": "会话列表",
+    "new": "新建会话",
+    "empty": "暂无会话，点击 + 开始",
+    "today": "今天",
+    "yesterday": "昨天",
+    "daysAgo": "{{count}} 天前",
+    "rename": "重命名",
+    "delete": "删除",
+    "deleteConfirm": "确定要删除这个会话吗？",
+    "defaultTitle": "新会话"
+  },
   "chat": {
     "placeholder": "输入您的消息...",
     "send": "发送",

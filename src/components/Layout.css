@@ -4,8 +4,8 @@
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  background-color: #1a1a2e;
-  color: #e0e0e0;
+  background-color: var(--cyber-bg-dark);
+  color: var(--cyber-text);
 }
 
 .layout-body {
@@ -16,10 +16,11 @@
 
 .layout-sidebar {
   width: 250px;
-  background-color: #16213e;
-  border-right: 1px solid #333;
+  background-color: var(--cyber-bg);
+  border-right: 1px solid var(--cyber-neon-purple);
   display: flex;
   flex-direction: column;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
 }
 
 .layout-main {
@@ -27,21 +28,26 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
+  background: radial-gradient(circle at top right, #1a1a2e 0%, #0a0a0f 100%);
 }
 
 .layout-header {
   height: 50px;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--cyber-neon-cyan);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
-  background-color: #1a1a2e;
+  background-color: var(--cyber-bg-light);
+  box-shadow: 0 2px 10px rgba(0, 255, 255, 0.1);
 }
 
 .title {
   font-weight: bold;
-  color: #00d9ff;
+  color: var(--cyber-neon-cyan);
+  text-shadow: 0 0 5px var(--cyber-neon-cyan);
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .actions {
@@ -50,18 +56,20 @@
 }
 
 .icon-btn {
-  background: none;
-  border: 1px solid #444;
-  color: #aaa;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--cyber-neon-purple);
+  color: var(--cyber-neon-purple);
   cursor: pointer;
   padding: 4px 8px;
-  border-radius: 4px;
+  border-radius: 2px;
   font-size: 0.8rem;
+  transition: all 0.2s ease;
 }
 
 .icon-btn:hover {
-  background-color: #333;
+  background-color: var(--cyber-neon-purple);
   color: #fff;
+  box-shadow: 0 0 10px var(--cyber-neon-purple);
 }
 
 .chat-container {
@@ -74,10 +82,11 @@
 
 .layout-bottom {
   height: 0;
-  background-color: #0f3460;
-  border-top: 1px solid #333;
+  background-color: var(--cyber-bg);
+  border-top: 1px solid var(--cyber-neon-pink);
   transition: height 0.3s ease;
   overflow: hidden;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .layout-bottom.open {
