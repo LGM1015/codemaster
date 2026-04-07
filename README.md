@@ -10,7 +10,7 @@
 
 ### Overview
 
-CodeMaster is an open-source AI coding agent desktop application designed specifically for Chinese developers. It integrates with Chinese LLM providers (DeepSeek, Qwen, etc.) to provide a seamless coding assistance experience without requiring VPN access.
+CodeMaster is an open-source AI coding agent desktop application designed specifically for  developers. It integrates with  LLM providers (DeepSeek, Qwen, etc.) to provide a seamless coding assistance experience without requiring VPN access.
 
 ### Features
 
@@ -54,7 +54,7 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ### 概述
 
-CodeMaster 是一个开源的 AI 编码代理桌面应用，专为中国开发者设计。它集成了国产大模型（DeepSeek、通义千问等），无需翻墙即可获得流畅的 AI 编码辅助体验。
+CodeMaster 是一个开源的 AI 编码代理桌面应用。它集成了国产大模型（DeepSeek、通义千问等），无需翻墙即可获得流畅的 AI 编码辅助体验。
 
 ### 特性
 
